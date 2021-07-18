@@ -7,7 +7,10 @@ This action launches [Jenkins Job Builder](https://jenkins-job-builder.readthedo
 ```yaml
 name: jjb
 
-on: [push]
+on:
+  push:
+    paths:
+      - jenkins/jobs.yml
 
 jobs:
   jjb:
