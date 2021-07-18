@@ -8,10 +8,10 @@ inputs:
   jenkins_token:
     description: Jenkins API token (https://www.jenkins.io/blog/2018/07/02/new-api-token-system/, preferred), or password
     required: true
-  jjb_yml:
-    description: Path to JJB YML file defining jobs
+  jjb_dir:
+    description: Path to directory with JJB YML files, searched recursively
     required: false
-    default: jobs.yml
+    default: jobs
   jjb_ini:
     description: Path to jenkins_jobs.ini file. Specify URL and username here. https://jenkins-job-builder.readthedocs.io/en/latest/execution.html
     required: false
@@ -31,6 +31,6 @@ runs:
       shell: bash
       env:
         INPUT_JENKINS_TOKEN: ${{ inputs.jenkins_token }}
-        INPUT_JOBS_FILE: ${{ inputs.jjb_yml }}
+        INPUT_JOBS_DIR: ${{ inputs.jjb_dir }}
         INPUT_INI_FILE: ${{ inputs.jjb_ini }}
         INPUT_JENKINS_CERT: ${{ inputs.jenkins_cert }}
