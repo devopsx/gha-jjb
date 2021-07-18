@@ -12,10 +12,10 @@ inputs:
     description: Path to JJB YML file defining jobs
     required: false
     default: jobs.yml
-  jjb_conf_ini:
-    description: Path to jenkins-job.ini file. Specify URL and username here. https://jenkins-job-builder.readthedocs.io/en/latest/execution.html
+  jjb_ini:
+    description: Path to jenkins_jobs.ini file. Specify URL and username here. https://jenkins-job-builder.readthedocs.io/en/latest/execution.html
     required: false
-    default: jenkins-jobs.ini
+    default: jenkins_jobs.ini
   jenkins_cert:
     description: Path to Jenkins web server certificate file. Set if you use self-signed cert in Jenkins.
     required: false
@@ -32,5 +32,5 @@ runs:
       env:
         INPUT_JENKINS_TOKEN: ${{ inputs.jenkins_token }}
         INPUT_JOBS_FILE: ${{ inputs.jjb_yml }}
-        INPUT_CONF_FILE: ${{ inputs.jjb_conf_ini }}
+        INPUT_INI_FILE: ${{ inputs.jjb_ini }}
         INPUT_JENKINS_CERT: ${{ inputs.jenkins_cert }}
