@@ -2,6 +2,11 @@
 
 set -xeu -o pipefail
 
+pwd
+ls -la
+git status
+
+
 if [[ "$INPUT_JENKINS_CERT" != 'false' ]]; then
   export REQUESTS_CA_BUNDLE="$INPUT_JENKINS_CERT"
 fi
