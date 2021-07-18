@@ -5,14 +5,14 @@ branding:
   color: green
 
 inputs:
-  token:
-    description: API token (https://www.jenkins.io/blog/2018/07/02/new-api-token-system/, preferred), or password
+  jenkins_token:
+    description: Jenkins API token (https://www.jenkins.io/blog/2018/07/02/new-api-token-system/, preferred), or password
     required: true
-  jobs_file:
-    description: Path to YML file defining jobs
+  jjb_yml:
+    description: Path to JJB YML file defining jobs
     required: false
     default: jobs.yml
-  conf_file:
+  jjb_conf_ini:
     description: Path to jenkins-job.ini file. Specify URL and username here. https://jenkins-job-builder.readthedocs.io/en/latest/execution.html
     required: false
     default: jenkins-jobs.ini
@@ -26,6 +26,6 @@ runs:
         $GITHUB_ACTION_PATH/gha.sh
       shell: bash
       env:
-        INPUT_TOKEN: ${{ inputs.token }}
-        INPUT_JOBS_FILE: ${{ inputs.jobs_file }}
-        INPUT_CONF_FILE: ${{ inputs.conf_file }}
+        INPUT_JENKINS_TOKEN: ${{ inputs.jenkins_token }}
+        INPUT_JOBS_FILE: ${{ inputs.jjb_yml }}
+        INPUT_CONF_FILE: ${{ inputs.jjb_conf_ini }}
