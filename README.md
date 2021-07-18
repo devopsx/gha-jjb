@@ -27,5 +27,7 @@ jobs:
 ## Configuration
 
 1. Create Jenkins [API token](https://www.jenkins.io/blog/2018/07/02/new-api-token-system/).
-2. Create `JENKINS_TOKEN` [secret](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) in repo settings.
-3. Add gha yaml, as described above. That's it!
+2. Use it to create `JENKINS_TOKEN` [secret](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) in repo settings.
+3. Add workflow yaml, as described above.
+
+That's it!
