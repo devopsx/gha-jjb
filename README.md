@@ -10,7 +10,7 @@ name: jjb
 on:
   push:
     paths:
-      - jenkins/jobs # job definitions here
+      - jenkins/jobs/** # job definitions here, searched recursively
 
 jobs:
   jjb:
@@ -20,7 +20,7 @@ jobs:
       - uses: devopsx/gha-jjb@master
         with:
           jenkins_token: ${{ secrets.JENKINS_TOKEN }}
-          jjb_dir: jenkins/jobs
+          jjb_dir: jenkins/jobs # same dir with definitions as in push stanza
           jjb_ini: jenkins/jenkins_jobs.ini
 ```
 
