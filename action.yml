@@ -16,6 +16,10 @@ inputs:
     description: Path to jenkins-job.ini file. Specify URL and username here. https://jenkins-job-builder.readthedocs.io/en/latest/execution.html
     required: false
     default: jenkins-jobs.ini
+  jenkins_cert:
+    description: Path to Jenkins web server certificate file. Set if you use self-signed cert in Jenkins.
+    required: false
+    default: "false"
 
 runs:
   using: "composite"
@@ -29,3 +33,4 @@ runs:
         INPUT_JENKINS_TOKEN: ${{ inputs.jenkins_token }}
         INPUT_JOBS_FILE: ${{ inputs.jjb_yml }}
         INPUT_CONF_FILE: ${{ inputs.jjb_conf_ini }}
+        INPUT_JENKINS_CERT: ${{ inputs.jenkins_cert }}
