@@ -10,7 +10,7 @@ name: jjb
 on:
   push:
     paths:
-      - jenkins/jobs.yml
+      - jenkins/jobs # job definitions here
 
 jobs:
   jjb:
@@ -20,7 +20,7 @@ jobs:
       - uses: devopsx/gha-jjb@master
         with:
           jenkins_token: ${{ secrets.JENKINS_TOKEN }}
-          jjb_yml: jenkins/jobs.yml
+          jjb_dir: jenkins/jobs
           jjb_ini: jenkins/jenkins_jobs.ini
 ```
 
