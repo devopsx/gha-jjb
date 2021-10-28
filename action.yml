@@ -20,6 +20,10 @@ inputs:
     description: Path to Jenkins web server certificate file. Set if you use self-signed cert in Jenkins.
     required: false
     default: "false"
+  delete_old:
+    description: Delete obsolete jobs (--delete-old flag)
+    required: false
+    default: "false"
 
 runs:
   using: "composite"
@@ -34,3 +38,4 @@ runs:
         INPUT_JOBS_DIR: ${{ inputs.jjb_dir }}
         INPUT_INI_FILE: ${{ inputs.jjb_ini }}
         INPUT_JENKINS_CERT: ${{ inputs.jenkins_cert }}
+        INPUT_DELETE_OLD: ${{ inputs.delete_old }}
