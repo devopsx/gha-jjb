@@ -16,7 +16,7 @@ jobs:
   jjb:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: devopsx/gha-jjb@master
         with:
           jenkins_token: ${{ secrets.JENKINS_TOKEN }}
